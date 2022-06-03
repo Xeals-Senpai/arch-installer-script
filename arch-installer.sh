@@ -45,7 +45,7 @@ fi
 
 echo Downloading applications
 
-pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl pcmanfm file-roller zsh python-pip pulseaudio pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty mdunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git
+pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl pcmanfm file-roller zsh python-pip pulseaudio pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 
 
 echo "What is your cpu type? (a = AMD or i = Intel)"
 read cputype
