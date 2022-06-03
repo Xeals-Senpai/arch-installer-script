@@ -100,7 +100,7 @@ cp -r /home/$UserName/dotfiles/.gitconfig /home/$UserName
 cp -r /home/$UserName/dotfiles/.xinitrc /home/$UserName
 
 echo Installing aur packages
-su $UserName  -c "yay -S networkmanager-iwd network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord signal-desktop mellowplayer pass"
+su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord signal-desktop mellowplayer pass"
 
 echo Setting up MellowPlayer plugins
 echo installing WideVine DRM plugin
