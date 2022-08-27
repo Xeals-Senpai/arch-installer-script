@@ -37,7 +37,7 @@ gpasswd -a $UserName audio
 gpasswd -a $UserName input
 
 echo "Do you wish to elevate the accounts privilige to root? (y/n)"
-read $choice
+read choice
 
 if [ "$choice" == "y" ]; then
 	echo '$UserName ALL=(ALL) NOPASSWD: ALL' | EDITOR='tee -a' visudo
@@ -45,7 +45,10 @@ fi
 
 echo Downloading applications
 
-pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl pcmanfm file-roller zsh python-pip pulseaudio pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 
+pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl nemo nemo-fileroller nemo-terminal zsh python-pip pipewire pipewire-pulse pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 mpv imv feh
+
+#Other recommended packages to download 
+#thunar thunar-archive-plugin file-roller pulseaudio
 
 echo "What is your cpu type? (a = AMD or i = Intel)"
 read cputype
@@ -69,7 +72,7 @@ read EFILocation
 echo "Do you wish to install a bootloader? (y will install grub otherwise user feel free to install other bootloaders)"
 read bootloaderchoice
 
-if [ "$bootlaoderchoice" == "y" ]; then
+if [ "$bootloaderchoice" == "y" ]; then
 	pacman -S grub efibootmgr os-prober
 	grub-install --target=x86_64-efi --efi-directory=$EFILocation	--bootloader-id=GRUB
 	grub-mkconfig -o /boot/grub/grub.cfg
@@ -100,9 +103,8 @@ cp -r /home/$UserName/dotfiles/.gitconfig /home/$UserName
 cp -r /home/$UserName/dotfiles/.xinitrc /home/$UserName
 
 echo Installing aur packages
-su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord signal-desktop mellowplayer pass"
+su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord-screenaudio signal-desktop"
 
-echo Setting up MellowPlayer plugins
-echo installing WideVine DRM plugin
-curl -s "https://gitlab.com/ColinDuquesnoy/MellowPlayer/-/raw/master/scripts/install-widevine.sh" | bash
-
+echo Activating Networkmanager services
+su $Username -c "sudo systemctl enable NetworkManager.services"
+su $Username -c "sudo systemctl start NetworkManager.services"
