@@ -96,11 +96,10 @@ git clone https://github.com/xeals-senpai/dotfiles.git
 cd dotfiles
 git submodule init
 git submodule update
-cd ..
-cp -r /home/$UserName/dotfiles/.config /home/$UserName
-cp -r /home/$UserName/dotfiles/.z* /home/$UserName
-cp -r /home/$UserName/dotfiles/.gitconfig /home/$UserName
-cp -r /home/$UserName/dotfiles/.xinitrc /home/$UserName
+cp -r /home/$UserName/Documents/dotfiles/.config /home/$UserName
+cp -r /home/$UserName/Documents/dotfiles/.z* /home/$UserName
+cp -r /home/$UserName/Documents/dotfiles/.gitconfig /home/$UserName
+cd /home/$Username
 
 echo Installing aur packages
 su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord-screenaudio signal-desktop"
@@ -108,3 +107,6 @@ su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-
 echo Activating Networkmanager services
 su $Username -c "sudo systemctl enable NetworkManager.services"
 su $Username -c "sudo systemctl start NetworkManager.services"
+
+echo changing the users shell to zsh
+chsh -s /bin/zsh $Username
