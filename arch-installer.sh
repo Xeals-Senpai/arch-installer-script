@@ -45,7 +45,7 @@ fi
 
 echo Downloading applications
 
-pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl nemo nemo-fileroller nemo-terminal zsh python-pip pipewire pipewire-pulse pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 mpv imv feh
+pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl nemo nemo-fileroller nemo-terminal zsh python-pip pipewire pipewire-pulse pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 mpv imv feh man
 
 #Other recommended packages to download 
 #thunar thunar-archive-plugin file-roller pulseaudio
