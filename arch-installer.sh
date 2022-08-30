@@ -45,7 +45,7 @@ fi
 
 echo Downloading applications
 
-pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl nemo nemo-fileroller nemo-terminal zsh python-pip pipewire pipewire-pulse pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 mpv imv feh man
+pacman -S ntfs-3g gvfs gvfs-smb jq pkgfile go wget noto-fonts polkit-gnome playerctl nemo nemo-fileroller nemo-terminal zsh python-pip pipewire pipewire-pulse pavucontrol ttf-font-awesome base-devel sway vim neovim waybar kitty dunst wl-clipboard swayidle slurp grim noto-fonts-emoji noto-fonts-cjk firefox gnome-disk-utility baobab seahorse lxappearance qt5-wayland qt6-wayland xorg-xwayland git swaybg gtk2 gtk3 mpv imv feh man htop 
 
 #Other recommended packages to download 
 #thunar thunar-archive-plugin file-roller pulseaudio
@@ -102,7 +102,7 @@ cp -r /home/$UserName/Documents/dotfiles/.gitconfig /home/$UserName
 cd /home/$Username
 
 echo Installing aur packages
-su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord-screenaudio signal-desktop"
+su $UserName  -c "yay -S networkmanager network-manager-applet swaylock-effects-git swappy redshift-wayland-git autotiling breeze-default-cursor-theme rofi-lbonn-wayland-git discord-screenaudio signal-desktop cmatrix"
 
 echo Activating Networkmanager services
 su $Username -c "sudo systemctl enable NetworkManager.services"
