@@ -63,23 +63,23 @@ else
 
 fi
 
-#echo Setting up bootloader
-#echo "Enter EFI/boot directory location (Default: /boot"
-#read EFILocation
+echo Setting up bootloader
+echo "Enter EFI/boot directory location (Default: /boot"
+read EFILocation
 
-#[ -d $EFILocation ] || $EFILocation=/boot
+[ -d $EFILocation ] || $EFILocation=/boot
 
-#echo "Do you wish to install a bootloader? (y will install grub otherwise user feel free to install other bootloaders)"
-#read bootloaderchoice
+echo "Do you wish to install a bootloader? (y will install grub otherwise user feel free to install other bootloaders)"
+read bootloaderchoice
 
-#if [ "$bootloaderchoice" == "y" ]; then
-	#pacman -S grub efibootmgr os-prober
-	#grub-install --target=x86_64-efi --efi-directory=$EFILocation	--bootloader-id=GRUB
-	#grub-mkconfig -o /boot/grub/grub.cfg
-#else
-	#echo Feel free to install other bootloader options
+if [ "$bootloaderchoice" == "y" ]; then
+	pacman -S grub efibootmgr os-prober
+	grub-install --target=x86_64-efi --efi-directory=$EFILocation	--bootloader-id=GRUB
+	grub-mkconfig -o /boot/grub/grub.cfg
+else
+	echo Feel free to install other bootloader options
 
-#fi
+fi
 
 echo installing yaourt-git or yay :D
 cd /home/$UserName
