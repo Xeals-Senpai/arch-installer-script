@@ -63,11 +63,11 @@ else
 
 fi
 
-echo Setting up bootloader
-echo "Enter EFI/boot directory location (Default: /boot"
-read EFILocation
+#echo Setting up bootloader
+#echo "Enter EFI/boot directory location (Default: /boot"
+#read EFILocation
 
-[ -d $EFILocation ] || $EFILocation=/boot
+#[ -d $EFILocation ] || $EFILocation=/boot
 
 #echo "Do you wish to install a bootloader? (y will install grub otherwise user feel free to install other bootloaders)"
 #read bootloaderchoice
